@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>love stam na kub</title>
+    <style>
+      body {
+            height: 100vh;
+            margin: 0;
+            background-color: #f0d9ed;
+            font-family: sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #myButton {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #ff4757;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            position: absolute; 
+            left: 58%;
+            transition: all 0.2s ease-out;
+        }
+        #love-btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #2ed573;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100px;
+            height: 60px;
+            margin-right: 300px;
+    
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <img src="https://media.tenor.com/E90r971nBbIAAAAm/kiss-lip-kiss.webp" alt="#">
+        <h1>รักเค้ามั้ย ตอบมาาาา!!!</h1> 
+        <button id="love-btn" onclick="alert('รักนะจุ้บๆๆๆๆ')">รัก</button> 
+        <button id="myButton">ไม่รัก</button>
+    </center>
+      <div> 
+        <audio autoplay loop hidden>
+        <source src="videoplayback.m4a" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+       const button = document.getElementById('myButton');
+        
+        let currentScale = 1.0; 
+
+        button.addEventListener('click', function() {
+            
+            currentScale = currentScale - 0.01; 
+
+            if (currentScale <= 0) {
+                alert("ให้โอกาสกดใหม่ - -");
+                currentScale = 1.0; 
+            }
+
+            const randomX = Math.random() * (window.innerWidth - 150); 
+            const randomY = Math.random() * (window.innerHeight - 80);
+
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+            
+            button.style.transform = `scale(${currentScale})`;
+        });
+    </script>
+    
+</body>
+</html>
